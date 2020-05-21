@@ -1,0 +1,44 @@
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vya2FyYW4iLCJpYXQiOjE1OTAwNTAyOTMsImV4cCI6MTU5MDA1MDMxOH0.ZmniZ54nl95WY0_p6yo2kgJoPETL8FszvQDqz27pnT4
+###
+
+GET http://localhost:3000/users
+
+###
+#Request new token
+POST http://localhost:3000/token 
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vya2FyYW4iLCJpYXQiOjE1OTAwNTU2NzN9._dtQrjGDIwBiezNuJKdfL3Q9uvumBsvsFHhbrTNkJZ4"
+}
+###
+#Revoke Refresh Token
+
+DELETE http://localhost:3000/logout
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vya2FyYW4iLCJpYXQiOjE1OTAwNTU2NzN9._dtQrjGDIwBiezNuJKdfL3Q9uvumBsvsFHhbrTNkJZ4"
+}
+
+###
+#create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name":"gurkaran",
+    "password":"password"
+}
+
+###
+#login user
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "name":"gurkaran",
+    "password":"password"
+}
